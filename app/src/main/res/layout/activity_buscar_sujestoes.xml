@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_buscar_sujestoes"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.jose.eventocultural.BuscarSujestoesActivity">
 
     <GridLayout
@@ -15,19 +16,17 @@
         android:rowCount="2" >
 
         <TextView
-            android:id="@+id/idEmprestimo"
+            android:id="@+id/idSujestoes"
             android:layout_width="0dip"
             android:layout_gravity="fill_horizontal"
             android:layout_height="wrap_content"
-            android:text="ID" />
+            android:text="Quantidade" />
 
         <TextView
-            android:id="@+id/nomePessoa"
+            android:id="@+id/nomeSujestao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="NOME" />
-
-
+            android:text="Sujestão" />
 
     </GridLayout>
 
@@ -37,13 +36,13 @@
         android:id="@+id/listView" />
 
 
-    <com.melnykov.fab.FloatingActionButton
-        android:id="@+id/fab"
-        android:onClick="btnTelaCadastro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:layout_margin="16dp"
-        android:src="@drawable/ic_add" />
+    <!--<com.melnykov.fab.FloatingActionButton-->
+        <!--android:id="@+id/fab"-->
+        <!--android:onClick="btnTelaCadastro"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom|right"-->
+        <!--android:layout_margin="16dp"-->
+        <!--android:src="@drawable/ic_add" />-->
 
-</FrameLayout>
+</LinearLayout>

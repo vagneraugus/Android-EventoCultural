@@ -1,6 +1,7 @@
 package com.example.jose.eventocultural;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,10 +15,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    private SQLiteDatabase db;
+    private CriarBanco banco;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,7 +94,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_deletarBanco) {
-            // Handle the camera action
+            
         } else if (id == R.id.nav_buscarQtdePessoas) {
             Intent itBuscarQtdePessoas = new Intent(MainActivity.this, BuscarQtdePessoas.class);
             startActivity(itBuscarQtdePessoas);
@@ -109,6 +113,31 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    //----------------------------------------------------------------------//
+    //----------------------------------------------------------------------//
+
+    public void Salvar() {
+        BancoController crud = new BancoController(getBaseContext());
+        EditText nome = (EditText) findViewById(R.id.edtNome);
+        EditText telefone = (EditText) findViewById((R.id.edtTelefone));
+        EditText email = (EditText) findViewById(R.id.edtEmail);
+        EditText gostou = (EditText) findViewById(R.id.edtGostou);
+        EditText sujestoes = (EditText) findViewById(R.id.edtSujestao);
+
+
+        String nomeString = nome.getText().toString();
+        String telefoneString = telefone.getText().toString();
+        String emailString = email.getText().toString();
+        String gotouString = gostou.getText().toString();
+        String sujestoesString = sujestoes.getText().toString();
+        String resultado;
+
+
+        resultado = crud.insereDado(nomeString, telefoneString, emailString, gotouString, sujestoesString);
+
+        Toast.makeText(getApplicationContext(), "Registro cadastrado com sucesso!", Toast.LENGTH_LONG).show();
+    }
+
     //Chamar Icon do menu_cadastro na activity Main
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -117,8 +146,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void menuCliqueCadastrar(MenuItem item) {
-
-
+        Salvar();
     }
 
     public void menuCliquePesquisar(MenuItem item) {
