@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_buscar_qtde_pessoas"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jose.eventocultural.BuscarQtdePessoas">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:columnCount="2"
+        android:rowCount="2" >
+
+        <TextView
+            android:id="@+id/idEmprestimo"
+            android:layout_width="0dip"
+            android:layout_gravity="fill_horizontal"
+            android:layout_height="wrap_content"
+            android:text="ID" />
+
+        <TextView
+            android:id="@+id/nomePessoa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NOME" />
+
+
+
+    </GridLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView" />
+
+
+    <com.melnykov.fab.FloatingActionButton
+        android:id="@+id/fab"
+        android:onClick="btnTelaCadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_add" />
+
+</FrameLayout>

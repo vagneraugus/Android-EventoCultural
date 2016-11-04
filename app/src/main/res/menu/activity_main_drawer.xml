@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_deletarBanco"
+            android:icon="@drawable/ic_clear_black"
+            android:title="Deletar banco" />
+        <item
+            android:id="@+id/nav_buscarQtdePessoas"
+            android:icon="@drawable/ic_supervisor_account"
+            android:title="Qtde pessoas" />
+        <item
+            android:id="@+id/nav_buscarSujestoes"
+            android:icon="@drawable/ic_lightbulb_outline"
+            android:title="Sujestões" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <!--<item-->
+                <!--android:id="@+id/nav_share"-->
+                <!--android:icon="@drawable/ic_menu_share"-->
+                <!--android:title="Share" />-->
+        </menu>
+    </item>
+
+</menu>
