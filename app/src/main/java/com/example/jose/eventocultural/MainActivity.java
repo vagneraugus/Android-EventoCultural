@@ -17,7 +17,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -62,37 +61,34 @@ public class MainActivity extends AppCompatActivity
         //----------------------------------------------------------------------//
         progressDialog = new ProgressDialog(MainActivity.this);
 
-        Button btn = (Button)findViewById(R.id.idDelete);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                builder.setMessage("Deseja apagar  os dados do evento?").setCancelable(false)
-                        .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                                BancoController crud = new BancoController(getBaseContext());
-                                crud.deletaTudo();
-
-                                Toast.makeText(MainActivity.this, "Dados excluídos!", Toast.LENGTH_LONG).show();
-                            }
-                        }).setNegativeButton("Não", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                        Toast.makeText(MainActivity.this, "Ação cancelada!", Toast.LENGTH_LONG).show();
-                    }
-                });
-
-                AlertDialog alert = builder.create();
-                alert.show();
-
-            }
-        });
-
-
-
+//        Button btn = (Button)findViewById(R.id.idDelete);
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+//                builder.setMessage("Deseja apagar  os dados do evento?").setCancelable(false)
+//                        .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialog, int which) {
+//
+//                                BancoController crud = new BancoController(getBaseContext());
+//                                crud.deletaTudo();
+//
+//                                Toast.makeText(MainActivity.this, "Dados excluídos!", Toast.LENGTH_LONG).show();
+//                            }
+//                        }).setNegativeButton("Não", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//
+//                        Toast.makeText(MainActivity.this, "Ação cancelada!", Toast.LENGTH_LONG).show();
+//                    }
+//                });
+//
+//                AlertDialog alert = builder.create();
+//                alert.show();
+//
+//            }
+//        });
 }
     @Override
     public void onBackPressed() {
@@ -133,7 +129,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_deletarBanco) {
-
+            excluirDialog();
 
         } else if (id == R.id.nav_buscarQtdePessoas) {
             Intent itBuscarQtdePessoas = new Intent(MainActivity.this, BuscarQtdePessoas.class);
@@ -158,6 +154,27 @@ public class MainActivity extends AppCompatActivity
 
     //Apos licar no botão de deletar
     public void excluirDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setMessage("Deseja apagar  os dados do evento?").setCancelable(false)
+                .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        BancoController crud = new BancoController(getBaseContext());
+                        crud.deletaTudo();
+
+                        Toast.makeText(MainActivity.this, "Dados excluídos!", Toast.LENGTH_LONG).show();
+                    }
+                }).setNegativeButton("Não", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                Toast.makeText(MainActivity.this, "Ação cancelada!", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        AlertDialog alert = builder.create();
+        alert.show();
 
 
     }
