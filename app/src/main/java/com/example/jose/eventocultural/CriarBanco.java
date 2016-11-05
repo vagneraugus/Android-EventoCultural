@@ -31,7 +31,7 @@ public class CriarBanco extends SQLiteOpenHelper {
                 + TABELA    + "("
                 + ID        + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + NOME      + " TEXT, "
-                + TELEFONE  +" TEXT, "
+                + TELEFONE  + " TEXT, "
                 + EMAIL     + " TEXT,"
                 + GOSTOU    + " TEXT,"
                 + SUJESTOES + " TEXT"
@@ -43,7 +43,7 @@ public class CriarBanco extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS"+ TABELA);
+        db.execSQL("DROP TABLE IF EXISTS "+ TABELA );
         onCreate(db);
     }
 }

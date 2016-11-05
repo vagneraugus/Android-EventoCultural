@@ -56,9 +56,9 @@ public class AlterarActivity extends AppCompatActivity {
     }
 
     private void alterar() {
-        progressDialog.setIndeterminate(true);
-        progressDialog.setMessage("Alterando...");
-        progressDialog.show();
+//        progressDialog.setIndeterminate(true);
+//        progressDialog.setMessage("Alterando...");
+//        progressDialog.show();
 
         crud.alteraRegistro(Integer.parseInt(codigo), nome.getText().toString(),telefone.getText().toString()
                 ,email.getText().toString(),gosuto.getText().toString(), sujestoes.getText().toString());
@@ -67,9 +67,9 @@ public class AlterarActivity extends AppCompatActivity {
     }
 
     private void Deletar() {
-        progressDialog.setIndeterminate(true);
-        progressDialog.setMessage("Deletando...");
-        progressDialog.show();
+//        progressDialog.setIndeterminate(true);
+//        progressDialog.setMessage("Deletando...");
+//        progressDialog.show();
 
         crud.deletaRegistro(Integer.parseInt(codigo));
         Intent intent = new Intent(AlterarActivity.this,BuscaCadActivity.class);
@@ -86,13 +86,13 @@ public class AlterarActivity extends AppCompatActivity {
     public void menuCliqueAlterar(MenuItem item) {
         alterar();
 
-        new android.os.Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        progressDialog.dismiss();
-                        finish();
-                    }
-                }, 2000);
+//        new android.os.Handler().postDelayed(
+//                new Runnable() {
+//                    public void run() {
+//                        progressDialog.dismiss();
+//                        finish();
+//                    }
+//                }, 2000);
     }
 
 

@@ -124,4 +124,13 @@ public class BancoController {
         db.delete(CriarBanco.TABELA,where,null);
         db.close();
     }
+
+
+
+    public void deletaTudo(){
+        db = banco.getWritableDatabase();
+        db.delete(CriarBanco.TABELA, null, null);
+        String selectQuery = "DROP TABLE "+CriarBanco.TABELA;
+        Cursor cursor = banco.getReadableDatabase().rawQuery(selectQuery, null);
+    }
 }
