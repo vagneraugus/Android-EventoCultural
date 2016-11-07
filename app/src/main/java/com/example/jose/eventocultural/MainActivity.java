@@ -31,6 +31,11 @@ public class MainActivity extends AppCompatActivity
     private java.lang.String tabela;
     private Context onUpgrade;
     private Context onCreate;
+    private EditText nome;
+    private EditText telefone;
+    private EditText email;
+    private EditText gostou;
+    private EditText sujestoes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,7 +131,7 @@ public class MainActivity extends AppCompatActivity
     //Apos licar no botão de deletar
     public void excluirDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setMessage("Deseja apagar  os dados do evento?").setCancelable(false)
+        builder.setMessage("Deseja Relamente APAGAR os registros?").setCancelable(false)
                 .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -134,14 +139,11 @@ public class MainActivity extends AppCompatActivity
                         BancoController crud = new BancoController(getBaseContext());
                         crud.deletaTudo();
 
-                        Toast.makeText(MainActivity.this, "Dados excluídos!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, "Registros excluídos!", Toast.LENGTH_LONG).show();
                     }
                 }).setNegativeButton("Não", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-                Toast.makeText(MainActivity.this, "Ação cancelada!", Toast.LENGTH_LONG).show();
-            }
+            public void onClick(DialogInterface dialog, int which) {}
         });
 
         AlertDialog alert = builder.create();
@@ -154,11 +156,11 @@ public class MainActivity extends AppCompatActivity
 
 
         BancoController crud = new BancoController(getBaseContext());
-        EditText nome = (EditText) findViewById(R.id.edtNome);
-        EditText telefone = (EditText) findViewById((R.id.edtTelefone));
-        EditText email = (EditText) findViewById(R.id.edtEmail);
-        EditText gostou = (EditText) findViewById(R.id.edtGostou);
-        EditText sujestoes = (EditText) findViewById(R.id.edtSujestao);
+        nome = (EditText) findViewById(R.id.edtNome);
+        telefone = (EditText) findViewById((R.id.edtTelefone));
+        email = (EditText) findViewById(R.id.edtEmail);
+        gostou = (EditText) findViewById(R.id.edtGostou);
+        sujestoes = (EditText) findViewById(R.id.edtSujestao);
 
 
         String nomeString = nome.getText().toString();
@@ -189,9 +191,15 @@ public class MainActivity extends AppCompatActivity
                 new Runnable() {
                     public void run() {
                         progressDialog.dismiss();
+//                        Intent itPesquisaCad = new Intent(MainActivity.this, BuscaCadActivity.class);
+//                        startActivity(itPesquisaCad);
+                        nome.setText("");
+                        telefone.setText("");
+                        email.setText("");
+                        gostou.setText("");
+                        sujestoes.setText("");
+                        nome.requestFocus();
 
-                        Intent itPesquisaCad = new Intent(MainActivity.this, BuscaCadActivity.class);
-                        startActivity(itPesquisaCad);
                     }
                 }, 2000);
     }
