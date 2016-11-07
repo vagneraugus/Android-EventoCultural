@@ -6,9 +6,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class BuscarQtdePessoas extends AppCompatActivity {
 
@@ -25,8 +27,6 @@ public class BuscarQtdePessoas extends AppCompatActivity {
         BancoController crud = new BancoController(getBaseContext());
         final Cursor cursor = crud.carregaDadosPessoas();
 
-        lbQtdePess = (TextView)findViewById(R.id.lbQtdePessoas);
-
         String[] nomeCampos = new String[] {CriarBanco.ID, CriarBanco.NOME};
         int[] idViews = new int[] {R.id.idQuantidade, R.id.nomePessoa};
 
@@ -35,14 +35,10 @@ public class BuscarQtdePessoas extends AppCompatActivity {
         lista = (ListView)findViewById(R.id.listView);
         lista.setAdapter(adaptador);
 
-//        String sql = "select count(*) from "+CriarBanco.TABELA+" where _id=" + CriarBanco.ID;
-//
-//        String lbQtde;
-//        lbQtde = lbQtdePess.getText().toString();
-//
-//        lbQtde = sql;
+        int qtde = crud.buscarQtdePessoas();
+        Log.i("AQUUUUUUUUUUUI===>", String.valueOf(qtde));
 
-
+        Toast.makeText(this, "QTDE de PESSOAS cadastradas: "+qtde,Toast.LENGTH_SHORT).show();
     }
 
     public void btnTelaCadastro(View view) {

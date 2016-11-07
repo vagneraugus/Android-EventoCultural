@@ -60,35 +60,6 @@ public class MainActivity extends AppCompatActivity
         //----------------------------------------------------------------------//
         //----------------------------------------------------------------------//
         progressDialog = new ProgressDialog(MainActivity.this);
-
-//        Button btn = (Button)findViewById(R.id.idDelete);
-//        btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-//                builder.setMessage("Deseja apagar  os dados do evento?").setCancelable(false)
-//                        .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
-//                            @Override
-//                            public void onClick(DialogInterface dialog, int which) {
-//
-//                                BancoController crud = new BancoController(getBaseContext());
-//                                crud.deletaTudo();
-//
-//                                Toast.makeText(MainActivity.this, "Dados excluídos!", Toast.LENGTH_LONG).show();
-//                            }
-//                        }).setNegativeButton("Não", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//
-//                        Toast.makeText(MainActivity.this, "Ação cancelada!", Toast.LENGTH_LONG).show();
-//                    }
-//                });
-//
-//                AlertDialog alert = builder.create();
-//                alert.show();
-//
-//            }
-//        });
 }
     @Override
     public void onBackPressed() {
@@ -175,17 +146,7 @@ public class MainActivity extends AppCompatActivity
 
         AlertDialog alert = builder.create();
         alert.show();
-
-
     }
-
-
-    //Exclui apos clicar em sim
-//    public void excluiu(){
-//        banco.onUpgrade(db , 1, 2);
-//    }
-
-
     public void Salvar() {
         progressDialog.setIndeterminate(true);
         progressDialog.setMessage("Salvando...");

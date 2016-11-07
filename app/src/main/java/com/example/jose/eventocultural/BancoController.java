@@ -125,12 +125,24 @@ public class BancoController {
         db.close();
     }
 
-
-
     public void deletaTudo(){
         db = banco.getWritableDatabase();
         db.delete(CriarBanco.TABELA, null, null);
         String selectQuery = "DROP TABLE "+CriarBanco.TABELA;
         Cursor cursor = banco.getReadableDatabase().rawQuery(selectQuery, null);
     }
+
+    //Busca qtde de pessoas cadastradas
+    public int buscarQtdePessoas(){
+        String countQuery = "SELECT  * FROM " + CriarBanco.TABELA;
+        db = banco.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int cnt = cursor.getCount();
+        cursor.close();
+        return cnt;
+
+    }
+
+
+
 }

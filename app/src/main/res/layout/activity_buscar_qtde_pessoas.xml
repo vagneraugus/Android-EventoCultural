@@ -6,14 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.jose.eventocultural.BuscarQtdePessoas">
-
-    <TextView
-        android:id="@+id/lbQtdePessoas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:layout_alignParentTop="true"/>
-
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,19 +27,12 @@
             android:layout_height="wrap_content"
             android:text="NOME" />
 
-
-
     </GridLayout>
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:id="@+id/listView" />
-
-
-
-
 
     <!--<com.melnykov.fab.FloatingActionButton-->
         <!--android:id="@+id/fab"-->

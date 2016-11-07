@@ -24,6 +24,7 @@
             android:id="@+id/edtNome"
             app:met_iconLeft="@drawable/ic_person"
             android:hint="Digite seu nome"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -89,12 +90,4 @@
             app:met_iconLeft="@drawable/ic_lightbulb_outline"
             android:hint="Sujestões?"/>
     </LinearLayout>
-
-    <!--<Button-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Delear"-->
-        <!--android:id="@+id/idDelete"-->
-        <!--android:onClick="deletarTudo"/>-->
-
 </LinearLayout>

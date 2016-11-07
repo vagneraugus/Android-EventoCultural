@@ -39,5 +39,4 @@ dependencies {
     compile 'fr.erictruong:materialedittext:0.2.0'
 
     compile 'com.afollestad.material-dialogs:commons:0.9.0.2'
-
 }
