@@ -38,7 +38,7 @@ public class BuscarQtdePessoas extends AppCompatActivity {
         int qtde = crud.buscarQtdePessoas();
         Log.i("AQUUUUUUUUUUUI===>", String.valueOf(qtde));
 
-        Toast.makeText(this, "QTDE de PESSOAS cadastradas: "+qtde,Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Quantidade de pessoas cadastradas: "+qtde,Toast.LENGTH_LONG).show();
     }
 
     public void btnTelaCadastro(View view) {

@@ -4,7 +4,7 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_deletarBanco"
-            android:icon="@drawable/ic_clear_black"
+            android:icon="@drawable/ic_delete_black"
             android:title="Deletar banco" />
         <item
             android:id="@+id/nav_buscarQtdePessoas"
@@ -16,13 +16,13 @@
             android:title="Sujestões" />
     </group>
 
-    <item android:title="Communicate">
-        <menu>
+    <!--<item android:title="Informação">-->
+        <!--<menu>-->
             <!--<item-->
-                <!--android:id="@+id/nav_share"-->
-                <!--android:icon="@drawable/ic_menu_share"-->
-                <!--android:title="Share" />-->
-        </menu>
-    </item>
+                <!--android:id="@+id/nav_infor"-->
+                <!--android:icon="@drawable/ic_info_black"-->
+                <!--android:title="Sobre" />-->
+        <!--</menu>-->
+    <!--</item>-->
 
 </menu>
